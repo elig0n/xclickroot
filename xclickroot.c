@@ -5,6 +5,9 @@
 #include <unistd.h>
 #include <X11/Xlib.h>
 
+#define Button8 8
+#define Button9 9
+
 static void usage(void);
 
 /* X Variables */
@@ -29,6 +32,8 @@ main(int argc, char *argv[])
 		case '3': case 'r': button = Button3; break;
 		case '4':           button = Button4; break;
 		case '5':           button = Button5; break;
+		case '8':           button = Button8; break;
+		case '9':           button = Button9; break;
 		default:
 			usage();
 			break;
@@ -78,6 +83,6 @@ main(int argc, char *argv[])
 static void
 usage(void)
 {
-	(void)fprintf(stderr, "usage: xclickroot [-12345lmr] command [args...]\n");
+	(void)fprintf(stderr, "usage: xclickroot [-1234589lmr] command [args...]\n");
 	exit(1);
 }
